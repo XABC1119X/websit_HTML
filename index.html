@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW" data-bs-theme="dark">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,7 @@
 <body>
     <!-- 導航列 -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
+        <div  class="container-fluid">
             <a class="navbar-brand" href="#">Shih的部落格</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,7 +39,7 @@
             <div class="text-container">
                 <h2 id="title1" class="display-4">歡迎來到 Shih 的部落格</h2>
                 <p id="title2"class="lead">探索我的學習經歷、創作作品與生活點滴。</p>
-                <a id="title3"href="#about" class="btn btn-primary btn-lg mt-4">瞭解更多</a>
+                <a id="title3" href="#about" class="btn btn-primary btn-lg mt-4">瞭解更多</a>
             </div>
         </div>
     </div>
@@ -52,7 +53,7 @@
             <h1>關於我</h1>
             <div class="row">
                 <div class="col-md-4 text-center">
-                    <img src="css/picture/my picture.jpg" class="rounded-circle img-fluid" width="194" height="259" alt="Shih">
+                    <img src="css/picture/my picture.jpg" class="rounded-circle img-fluid " width="194" height="259" alt="Shih">
                 </div>
                 <div class="col-md-8">
                     <h3>施羽哲 (Jay Shih)</h3>
@@ -88,8 +89,19 @@
         <div id="video" class="mb-5"><h1>視訊作品</h1><iframe width="100%" height="315" src="https://www.youtube.com/embed/w4WBiEvviw0" allowfullscreen></iframe></div>
 
         <!-- 更多資訊 -->
-        <div id="contact" class="mb-5"><h1>更多資訊</h1><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7230.556833183051!2d121.53510957956317!3d25.02462389718891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a908a8232611%3A0xeebfb2d71a5025c7!2z5ZyL56uL6Ie65YyX5pWZ6IKy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1710216857666!5m2!1szh-TW!2stw" width="100%" height="450" allowfullscreen></iframe></div>
+        <div id="contact" class="mb-5" class="floating"><h1>更多資訊</h1><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7230.556833183051!2d121.53510957956317!3d25.02462389718891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a908a8232611%3A0xeebfb2d71a5025c7!2z5ZyL56uL6Ie65YyX5pWZ6IKy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1710216857666!5m2!1szh-TW!2stw" width="100%" height="450" allowfullscreen></iframe></div>
     </div>
+
+    <div id="clock"></div>
+        <script>
+        function updateClock() {
+            const now = new Date();
+            const clock = document.getElementById('clock');
+            clock.innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+        </script>
 
     <!-- 返回頂部按鈕 -->
     <a href="#" class="btn btn-primary btn-top">↑ 返回頂部</a>

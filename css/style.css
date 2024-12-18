@@ -5,7 +5,9 @@ body {
     color: white;
 }
 
-
+html {
+    scroll-behavior: smooth; /* 平滑滾動效果 */
+}
 html, body {
 	height: auto;
     overflow-x: hidden;
@@ -47,15 +49,56 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.card {
+    background: rgba(255, 255, 255, 0.1); /* 透明白背景 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px;
+    backdrop-filter: blur(5px);
+}
+h1, h2, h3 {
+    font-family: 'Poppins', Arial, sans-serif; /* 使用 Google 字體 */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 .btn {
     position: relative; /* 確保定位 */
     z-index: 10; /* 提高層級，避免被遮擋 */
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(90deg, #f61010, #00c8ff);
+    border: none;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: all 0.5s;
 }
 
-
-.overlay {
-    position: absolute;
-    z-index: 1;
+.btn:hover::before {
+    left: 100%;
+}
+.btn:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); 
+    transition: all 0.2s ease-in-out;
 }
 
 .btn-top {
@@ -65,9 +108,19 @@ html, body {
     z-index: 99;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+#title1, #title2, #title3 {
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0; /* 初始透明 */
 }
 
 #title1 {
@@ -99,4 +152,52 @@ html, body {
     background-color: rgba(0, 0, 0, 0.8); /* 黑色半透明背景 */
     backdrop-filter: blur(10px); /* 增加模糊效果 */
     z-index: 1050; /* 保持導航列在最上層 */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-background {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    height: 100vh;
+}
+img:hover {
+    transform: scale(1.1); 
+    transition: all 0.3s ease-in-out;
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.gradient-mask {
+    position: relative;
+    background: url('css/picture/parallax-bg.jpg') center/cover no-repeat;
+    height: 400px;
+}
+
+.gradient-mask::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, black);
+}
+
+#clock {
+    font-size: 1rem;
+    color: #00C9FF;
+    margin-top: 20px;
 }
